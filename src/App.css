@@ -21,25 +21,26 @@
 }
 
 .header {
-  height: 250px;
+  height: 200px;
   background-image: url('/pattern-bg-desktop.png');
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: .5em;
   position: relative;
 }
 
 .header h1 {
-  margin-top: 2rem;
+  margin-top: 1rem;
   color: var(--white);
+  font-size: 26px;
 }
 
 .search {
-  height: 50px;
+  height: 45px;
   width: 80%;
-  max-width: 550px;
+  max-width: 500px;
   border-radius: 10px;
   overflow: hidden;
   display: flex;
@@ -56,7 +57,7 @@
   outline: none;
   height: 100%;
   width: 85%;
-  padding: 1em;
+  padding: .7em;
 }
 
 .search-icon {
@@ -75,7 +76,7 @@
   display: flex;
   justify-content: center;
   position: absolute;
-  top: 11em;
+  top: 8.5em;
 }
 
 .stats {
@@ -84,7 +85,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 1em;
-  padding: 1em 0;
+  padding: .1em 0;
   min-height: 120px;
   background-color: var(--white);
   color: var(--very-dark-gray);
@@ -98,7 +99,7 @@
   padding: 0 3em 2em 1em;
   font-size: 18px;
   max-width: 190px;
-  height: 60px;
+  height: 50px;
   text-align: left;
 }
 
@@ -138,7 +139,7 @@
 
   .header h1 {
     margin-top: 1rem;
-    font-size: 28px;
+    font-size: 24px;
   }
 
   .stats-sec {
@@ -176,7 +177,7 @@
     min-width: 270px;
     text-align: center;
     width: max-content;
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .stats-item:nth-child(2) p::before,
