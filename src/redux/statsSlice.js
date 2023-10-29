@@ -4,12 +4,12 @@ const fetchLocation = createAsyncThunk('stats/fetchLocation', async (ipAddress =
   try {
     const response = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_LqvZb0xjATcBPhCOuMBNIn6dLXRqv&ipAddress=${ipAddress}`);
     if (!response.ok) {
-      throw new Error('Request failed'); // Handle non-2xx response
+      throw new Error('Request failed');
     }
     const data = await response.json();
     return data;
   } catch (error) {
-    return rejectWithValue(error.message); // Pass the error message to the reducer
+    return rejectWithValue(error.message);
   }
 });
 

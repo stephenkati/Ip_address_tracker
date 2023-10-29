@@ -1,5 +1,5 @@
-import statsReducer from "./statsReducer";
 import { configureStore } from '@reduxjs/toolkit';
+import statsReducer from "./statsSlice";
 
 const store = configureStore({
   reducer: {
