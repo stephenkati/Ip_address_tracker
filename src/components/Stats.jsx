@@ -1,36 +1,41 @@
-import React from 'react'
+import React from 'react';
 
-const Stats = ({
-  ipAddress,
-  location,
-  timezone,
-  isp
-}) => {
+
+
+const Stats = ({ data }) => {
+
+console.log(data);
+  if (!data) {
+    return null;
+  }
+
   return (
     <div className='stats-sec'>
       <div className='stats'>
         <div className='stats-item'>
           <p>IP ADDRESS</p>
-          <span> {ipAddress} </span>
+          <span>{data.ip}</span>
         </div>
 
         <div className='stats-item'>
           <p>LOCATION</p>
-          <span> {location} </span>
+          <span>
+            {data.location.city}, {data.location.region}, {data.location.country}
+          </span>
         </div>
 
         <div className='stats-item'>
           <p>TIMEZONE</p>
-          <span> {timezone} </span>
+          <span>{data.location.timezone}</span>
         </div>
 
         <div className='stats-item'>
           <p>ISP</p>
-          <span> {isp} </span>
+          <span>{data.isp}</span>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Stats;

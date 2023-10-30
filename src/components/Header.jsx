@@ -1,45 +1,24 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react';
 import Search from './Search';
 import Stats from './Stats';
+import { fetchLocation } from '../redux/statsSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Header = () => {
-  const [ipAddress, setIpAddress] = useState('');
-  const [location, setLocation] = useState('');
-  const [timezone, setTimezone] = useState('');
-  const [isp, setIsp] = useState('');
-  const [cordinates, setCordinates] = useState({});
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.stats.stats);
 
-  const fetchLocation = async (ipAddress = "") => {
-    const response = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_LqvZb0xjATcBPhCOuMBNIn6dLXRqv&ipAddress=${ipAddress}`);
-
-    const data = await response.json();
-
-    setIpAddress(data.ip);
-    setLocation(`${data.location.city}, ${data.location.country} ${data.location.geonameId}`);
-    setTimezone(`UTC ${data.location.timezone}`);
-    setIsp(data.isp);
-    setCordinates({
-      lat: data.location.lat,
-      lng: data.location.lng
-    });
-  };
-
-  useEffect(()=> {
-    fetchLocation();
-  }, [])
+  useEffect(() => {
+    dispatch(fetchLocation());
+  }, [dispatch]);
 
   return (
-    <div className='header'>
+    <div className="header">
       <h1>Ip Address Tracker</h1>
       <Search />
-      <Stats
-        ipAddress={ipAddress}
-        location={location}
-        timezone={timezone}
-        isp={isp}
-      />
+      <Stats data={data} />
     </div>
-  )
-}
+  );
+};
 
 export default Header;
