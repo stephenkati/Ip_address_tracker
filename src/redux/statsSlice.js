@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const fetchLocation = createAsyncThunk('stats/fetchLocation', async (ipAddress = "", { rejectWithValue }) => {
+const fetchLocation = createAsyncThunk('stats/fetchLocation', async (ipAddress, { rejectWithValue }) => {
   try {
     const response = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_LqvZb0xjATcBPhCOuMBNIn6dLXRqv&ipAddress=${ipAddress}`);
     if (!response.ok) {
