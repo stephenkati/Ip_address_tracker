@@ -1,10 +1,7 @@
 import React from 'react';
 
-
-
 const Stats = ({ data }) => {
 
-console.log(data);
   if (!data) {
     return null;
   }
