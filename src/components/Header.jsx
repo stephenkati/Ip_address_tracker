@@ -1,16 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Search from './Search';
 import Stats from './Stats';
-import { fetchLocation } from '../redux/statsSlice';
-import { useDispatch, useSelector } from 'react-redux';
 
-const Header = () => {
-  const dispatch = useDispatch();
-  const data = useSelector((state) => state.stats.stats);
-
-  useEffect(() => {
-    dispatch(fetchLocation());
-  }, [dispatch]);
+const Header = ({ data }) => {
 
   return (
     <div className="header">
