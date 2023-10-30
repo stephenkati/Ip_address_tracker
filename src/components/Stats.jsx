@@ -17,7 +17,7 @@ const Stats = ({ data }) => {
         <div className='stats-item'>
           <p>LOCATION</p>
           <span>
-            {data.location.city}, {data.location.region}, {data.location.country}
+            {data.location.city}, {data.location.country} {data.location.geonameId}
           </span>
         </div>
 
