@@ -8,9 +8,11 @@ const Map = ({ data }) => {
 
   useEffect(() => {
     if (data && data.location) {
+      const lat = data.location.lat;
+      const lng = data.location.lng;
 
       if (!mapRef.current._leaflet_id) {
-        const map = L.map(mapRef.current).setView([data.location.lat, data.location.lng], 15);
+        const map = L.map(mapRef.current).setView([lat, lng], 15);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
           attribution: '© OpenStreetMap contributors',
@@ -18,7 +20,7 @@ const Map = ({ data }) => {
 
         const marker = L.icon({ iconUrl: markerIcon });
 
-        L.marker([data.location.lat, data.location.lng], { icon: marker }).addTo(map);
+        L.marker([lat, lng], { icon: marker }).addTo(map);
       }
     }
   }, [data]);
