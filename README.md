@@ -29,8 +29,8 @@ Users should be able to:
 
 ### Screenshot
 
-![Desktop](/ip-address-tracker-desktop.png)
-![Mobile](/ip-address-tracker-mobile.png)
+![Desktop](https://github.com/stephenkati/Ip_address_tracker/blob/readme/public/ip-address-tracker-desktop.png)
+![Mobile](https://github.com/stephenkati/Ip_address_tracker/blob/readme/public/ip-address-tracker-mobile.png)
 
 ### Links
 
