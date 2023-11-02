@@ -12,7 +12,7 @@ const Map = ({ data }) => {
       const lng = data.location.lng;
 
       if (!mapRef.current._leaflet_id) {
-        const map = L.map(mapRef.current).setView([lat, lng], 15);
+        const map = L.map(mapRef.current).setView([lat, lng], 13);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
           attribution: '© OpenStreetMap contributors',
