@@ -147,7 +147,6 @@
 @media only screen and (max-width: 655px){
   .header {
     background-image: url('/pattern-bg-mobile.png');
-    height: 40%;
   }
 
   .header h1 {
@@ -197,9 +196,5 @@
   .stats-item:nth-child(3) p::before,
   .stats-item:nth-child(4) p::before {
     content: none;
-  }
-
-  .map {
-    height: 60%;
   }
 }
